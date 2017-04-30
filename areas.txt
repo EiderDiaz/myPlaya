@@ -1,0 +1,191 @@
+$('#id_centerlatitude').hide();
+$('#id_centerlongitude').hide();
+
+
+var measure;
+
+// $(document).ready(function() {
+
+//     var lat = $('#id_latitude').val();
+//     var lng = $('#id_longitude').val();
+
+//     initialize(lat,lng);
+
+// });
+
+    /**
+    funcion que optiene las coordenadas de la posicion en la que se encuentra el usuario
+    */
+    function getCoords(position)
+    {
+     var lat = position.coords.latitude;
+     var lng = position.coords.longitude;
+        
+     initialize(lat,lng);
+    }
+    /**
+    funcion a la que se hace referencia cuando ocurre un error al tomar la posicion actual
+    */
+    function getError(err)
+    {
+     initialize(13.30272,-87.194107);
+    }
+
+
+function initialize(lat, lng){
+     measure = {
+        mvcLine: new google.maps.MVCArray(),
+        mvcPolygon: new google.maps.MVCArray(),
+        mvcMarkers: new google.maps.MVCArray(),
+        line: null,
+        polygon: null
+    };
+
+    var mapOptions = {
+        scaleControl: true,
+        zoom: 15,
+        zoomControl: true,
+        zoomControlOptions: {style: google.maps.ZoomControlStyle.SMALL},
+        panControl: false,
+        center: new google.maps.LatLng(lat, lng),
+        mapTypeId: google.maps.MapTypeId.HYBRID,
+        draggableCursor: 'crosshair'
+    };
+
+
+    map = new google.maps.Map($("#mapa").get(0), mapOptions);
+
+    // map.setTilt(0);
+
+    google.maps.event.addListener(map, 'click', function(event) {
+        $('#id_coords').val($('#id_coords').val() + JSON.stringify(event.latLng) + '|')
+        placeMarker(event.latLng);
+        compute_length();
+    });
+}
+
+/*evento de click para el boton de referencia por localidad*/
+    $('#btnLocRef').on('click',function(event){
+        event.preventDefault();
+        var address = $('#locRef').val();
+
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode({'address':address},geocodeResult);
+    });
+
+    function geocodeResult(results, status){
+        if(status=='OK'){
+            console.log(results[0].geometry.location);
+            initialize(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+        }
+    } 
+
+function placeMarker(latLng) {
+    var marker = new google.maps.Marker({map: map, position: latLng, draggable: true});
+    marker.setIcon('/static/cust_field/images/mini_circle.png');
+    measure.mvcLine.push(latLng);
+    measure.mvcPolygon.push(latLng);
+    measure.mvcMarkers.push(marker);
+    var latLngIndex = measure.mvcLine.getLength() - 1;
+    google.maps.event.addListener(marker, "drag", function(evt) {
+        measure.mvcLine.setAt(latLngIndex, evt.latLng);
+        measure.mvcPolygon.setAt(latLngIndex, evt.latLng);
+    });
+    google.maps.event.addListener(marker, "dragend", function() {
+        if (measure.mvcLine.getLength() > 1) {
+            compute_length();
+        }
+    });
+
+    display_polygon_line();
+}
+
+function display_polygon_line() {
+    if (measure.mvcLine.getLength() > 1) {
+        if (measure.mvcPolygon.getLength() > 1) {
+
+            if (measure.polygon != null)
+            {
+                measure.polygon.setMap(null);
+            }
+
+            measure.polygon = new google.maps.Polygon({
+                clickable: false,
+                map: map,
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.4,
+                fillOpacity: 0.3,
+                strokeOpacity: 3,
+                paths: measure.mvcPolygon
+            });
+        }
+    }
+    // if (measure.mvcLine.getLength() > 1) {
+    //     compute_length();
+    //     //get_center();
+    // }
+}
+
+function compute_length() {
+    var area = 0;
+    if (measure.mvcPolygon.getLength() > 2) {
+        area = google.maps.geometry.spherical.computeArea(measure.polygon.getPath());
+    }
+        var hec = area / 10000;
+        $('#id_area').val(hec);
+        poligonarray = measure.mvcPolygon.getArray();
+        $('#id_coords').val('');
+        for(i=0;i<poligonarray.length;i++){
+            console.log('jola');
+            $('#id_coords').val($('#id_coords').val() + JSON.stringify(poligonarray[i]) + '|')
+        }
+}
+
+
+function removeLastMarker() {
+    var test = measure.mvcLine.pop();
+    if (test)
+    {
+        measure.mvcPolygon.pop();
+        var marker = measure.mvcMarkers.pop();
+        marker.setMap(null);
+        compute_length();
+    }
+}
+
+function clearMarkers() {
+    if (measure.polygon) {
+        measure.polygon.setMap(null);
+        measure.polygon = null;
+    }
+    if (measure.line) {
+        measure.line.setMap(null);
+        measure.line = null
+    }
+    measure.mvcLine.clear();
+    measure.mvcPolygon.clear();
+    measure.mvcMarkers.forEach(function(elem, index) {
+        elem.setMap(null);
+    });
+    measure.mvcMarkers.clear();
+}
+
+//----- toma coordenadas centrales de poligono------//
+$('#btnSave').on('click', function(event){
+    bounds = new google.maps.LatLngBounds();
+    for (i = 0; i < measure.mvcPolygon.length; i++) {
+        bounds.extend(measure.mvcPolygon.getArray()[i]);
+    }
+    $('#id_centerlatitude').val(bounds.getCenter().lat());
+    $('#id_centerlongitude').val(bounds.getCenter().lng());
+});
+
+$('#save_redir').on('click', function(event){
+   bounds = new google.maps.LatLngBounds();
+    for (i = 0; i < measure.mvcPolygon.length; i++) {
+        bounds.extend(measure.mvcPolygon.getArray()[i]);
+    }
+    $('#id_centerlatitude').val(bounds.getCenter().lat());
+    $('#id_centerlongitude').val(bounds.getCenter().lng()); 
+});

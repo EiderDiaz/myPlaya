@@ -1,0 +1,81 @@
+	/**
+	funcion que optiene las coordenadas de la posicion en la que se encuentra el usuario
+	*/
+	function getCoords(position)
+	{
+		var lat = position.coords.latitude;
+		var lng = position.coords.longitude;
+		
+		initialize(lat,lng);
+	}
+	/**
+	funcion a la que se hace referencia cuando ocurre un error al tomar la posicion actual
+	*/
+	function getError(err)
+	{
+		initialize(13.30272,-87.194107);
+	}
+
+	// /**
+	// funcion que inicializa el mapa y los marcadores
+	// */
+	function initialize(lat, lng)
+	{
+		//configuracion del mapa inicial
+		var mapSettings = {
+			center : new google.maps.LatLng(lat,lng),
+			zoom : 16,
+			mapTypeId : google.maps.MapTypeId.HYBRID
+		}
+
+        
+		map = new google.maps.Map($("#mapa").get(0), mapSettings);
+		map.setOptions({disableDoubleClickZoom:true})
+		var marker = marcador(lat,lng,map);
+
+        //evento que toma las coordenadas cuando cambia la posicion del marcador
+		google.maps.event.addListener(marker,'position_changed', function(){
+			getMarkerCoords(marker);
+		});
+		//evento que toma las coordenadas y asigna nuevo marcador cuando se da clic
+		google.maps.event.addListener(map, 'click', function(event){
+			var coordenadas = event.latLng;
+			var lat = coordenadas.lat();
+			var lng = coordenadas.lng();
+			marker.setMap(null);
+			marker = marcador(lat,lng,map);
+			getMarkerCoords(marker);
+		});
+        
+	}
+
+	function geocodeResult(results, status){
+		if(status=='OK'){
+			//console.log(results[0].geometry.location);
+			initialize(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+		}
+	}    
+
+	/**
+	funcion que agrega un marcador al mapa
+	*/
+	function marcador(lat, lng, map)
+	{
+		return new google.maps.Marker({
+			position : new google.maps.LatLng(lat,lng),
+			map : map,
+			draggable :false,
+			title : "actual"
+		});
+	}
+	/**
+	funcion que obtiene las coordenadas de un marcador
+	*/
+	function getMarkerCoords(marker)
+	{
+		var markerCoords = marker.getPosition();
+		$('#id_latitude').val(markerCoords.lat());
+		$('#id_longitude').val(markerCoords.lng());
+	}
+
+	
