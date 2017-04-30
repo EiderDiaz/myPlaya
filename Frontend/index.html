@@ -6,209 +6,243 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="index.css">
 <script type="text/javascript" src="index.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card-2"> <a href="#home" class="w3-bar-item w3-button"><b>My</b> playa</a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small"> <a href="#projects" class="w3-bar-item w3-button">Common riks</a> <a href="#about" class="w3-bar-item w3-button">About</a> <a href="#contact" class="w3-bar-item w3-button">Contact</a> </div>
+    </div>
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:2000px;" id="home">
+        <div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative; outline: none;">
+            <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
+                <div class="leaflet-pane leaflet-tile-pane">
+                    <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                        <div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"></div>
+                    </div>
+                </div>
+                <div class="leaflet-pane leaflet-shadow-pane">
+                <div class="leaflet-pane leaflet-tooltip-pane"></div>
+                <div class="leaflet-pane leaflet-popup-pane"></div>
+                <div class="leaflet-proxy leaflet-zoom-animated"></div>
+            </div>
+            <div class="leaflet-control-container">
+                <div class="leaflet-top leaflet-left">
+                    <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">-</a></div>
+                </div>
+                <div class="leaflet-top leaflet-right">
+                    <div class="leaflet-control-layers leaflet-control" aria-haspopup="true">
+                        <a class="leaflet-control-layers-toggle" href="#" title="Layers"></a>
+                        <form class="leaflet-control-layers-list">
+                            <div class="leaflet-control-layers-base">
+                                <label>
+                                    <div>
+                                        <input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers" checked="checked"><span> Grayscale</span></div>
+                                </label>
+                                <label>
+                                    <div>
+                                        <input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers"><span> Streets</span></div>
+                                </label>
+                            </div>
+                            <div class="leaflet-control-layers-separator"></div>
+                            <div class="leaflet-control-layers-overlays">
+                                <label>
+                                    <div>
+                                    </div>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="leaflet-bottom leaflet-left"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Page content -->
+    <div class="w3-content w3-padding" style="max-width:1564px">
+    
+        <!-- Project Section -->
+        <div class="w3-container w3-padding-32" id="projects">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Common risks</h3> </div>
+        <div class="w3-row-padding">
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Broken glass</div> <img src="images/glass.jpg" alt="broken glass" style="width:100%"> </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Rock terrain</div> <img src="images/rocks.jpg" alt="Rock terrain" style="width:100%"> </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Trash</div> <img src="images/trash.jpg" alt="Trash" style="width:100%"> </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">High Dunes</div> <img src="/images/dunes.jpg" alt="High dunes" style="width:100%"> </div>
+            </div>
+        </div>
+        <div class="w3-row-padding">
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Mosquito</div> <img src="images/mosquito.jpg" alt="Mosquito" style="width:99%"> </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Snake</div> <img src="images/snake.jpg" alt="Sanke" style="width:99%"> </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">JellyFish</div> <img src="images/jellyfish.jpg" alt="Jelly fish" style="width:99%"> </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Manta Ray</div> <img src="images/manta%20ray.jpg" alt="House" style="width:99%"> </div>
+            </div>
+        </div>
+        <!-- About Section -->
+        <div class="w3-container w3-padding-32" id="about">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About My Playa</h3>
+            <p> My Playa is a beach-goers oriented application that provides environmental, safety and recreational information con local beaches. </p>
+        </div>
+        <div class="w3-row-padding w3-grayscale">
+            <div class="w3-container w3-center"> "Aquí va el video" </div>
+        </div>
+        <!-- Contact Section -->
+        <!-- End page content -->
+    </div>
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-16">
+        <div class="w3-container w3-padding-0" id="contact">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+            <div class="w3-col l3 m6 w3-margin-bottom"> Contact us
+                <p>email: myplaya@myplaya.mx</p>
+                <p>Phone: 6681762398</p>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom"> Social Media
+                <br>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </div> Where to find us
+            <div class="w3-col l6 m6 w3-margin-bottom">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.7481618442484!2d-108.98198518450658!3d25.811881183613984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ba28b72d7b489f%3A0x673d84b1ca02ca89!2sCowork+Corner!5e0!3m2!1ses-419!2smx!4v1493504078039" width="600" height="250" frameborder="0" margin-top="20px" allowfullscreen></iframe>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+   
+	var cities = new L.LayerGroup();
+    var security = new L.LayerGroup();
+    var ecofrendly = new L.LayerGroup();
+    var enviromental = new L.LayerGroup();
+    var contamination = new L.LayerGroup();
+    var ecology = new L.LayerGroup();
+    
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
-    <script type="text/javascript" src="map.js">
-      
+	  L.marker([25.580276, -109.119918]).addTo(cities)
+    .bindPopup("<b>Cities</b><br />trash: <br>Los mochis").openPopup();
+
+ L.marker([25.580276, -109.119918]).addTo(cities)
+    .bindPopup("<b>Cities</b><br />trash: <br> Los mochis").openPopup();
+
+     L.marker([25.580276, -109.119918]).addTo(cities)
+    .bindPopup("<b>Cities</b><br />trash: <br> Los mochis").openPopup();
+
+    L.circle([25.58623, -109.13767], 50, {
+    color: 'green',
+    fillColor: '#2ecc71',
+    fillOpacity: 0.5
+  }).addTo(ecology).bindPopup("<b>Ecology</b><br /Flora: : <br> nicotiana glauca .");
+
+
+      L.polygon([
+    [25.57961, -109.11364],
+    [25.57899, -109.1108],
+    [25.57876, -109.11376]
+  ]).addTo(enviromental).bindPopup("<b>environmental alert</b><br /Sea activity: Ray attack <br> Ray attack .");
+
+    
+    L.marker([25.58189, -109.12351]).addTo(ecofrendly)
+    .bindPopup("<b>Ecofriendly</b><br />Sports: <br> wind surfing.").openPopup();
+
+    L.circle([25.58449, -109.11291], 50, {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5
+  }).addTo(security).bindPopup("<b>security</b><br /car crash: : <br> car crash."); 
+
+    
+      L.marker([25.57705, -109.11344]).addTo(contamination)
+    .bindPopup("<b>contamination</b><br />trash: <br> empty cans.").openPopup();
+
+ L.marker([25.57701, -109.11033]).addTo(contamination)
+    .bindPopup("<b>contamination</b><br />trash: <br> broken glass.").openPopup();
+
+     L.marker([25.57974, -109.11838]).addTo(contamination)
+    .bindPopup("<b>contamination</b><br />trash: <br> broken glass.").openPopup();
+
+    
+
+	var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+		mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+	var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
+		streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr});
+
+	var map = L.map('map', {
+		center: [25.580276, -109.119918],
+		zoom: 15,
+		layers: [grayscale, cities]
+	});
+
+	var baseLayers = {
+		"Grayscale": grayscale,
+		"Streets": streets
+	};
+
+	var overlays = {
+		"Cities": cities,
+        "Security":security,
+        "ecofrendly":ecofrendly,
+        "enviromental":enviromental,
+        "Contamination":contamination,
+        "ecology":ecology
+        
+        
+	};
+
+	L.control.layers(baseLayers, overlays).addTo(map);
+    
       var popup = L.popup();
+
+  function createpopup(coord){
+var coord1=coord.substring(coord.lastIndexOf("(")+1,coord.lastIndexOf(","));
+var coord2=coord.substring(coord.lastIndexOf(",")+1,coord.lastIndexOf(")"));
+    L.marker([parseFloat(coord1),parseFloat(coord2)]).addTo(mymap)
+    .bindPopup("<b>danger</b><br />danger: <br> danger.").openPopup();
+
+  }
 
   function onMapClick(e) {
     popup
       .setLatLng(e.latlng)
       .setContent("You clicked the map at " + e.latlng.toString())
       .openOn(mymap);
+createpopup(e.latlng.toString());
+
   }
 
   mymap.on('click', onMapClick);
-    </script>
-<body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
-    <a href="#home" class="w3-bar-item w3-button"><b>My</b> playa</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#projects" class="w3-bar-item w3-button">Common riks</a>
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-    </div>
-  </div>
-
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:2000px;" id="home">
-      
-<div id="mapid"></div>
-</header>
-
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
-<div class="w3-container w3-padding-32" id="about">
-        <div class="w3-container w3-padding-0" id="projects">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="text-allign:center">Update map</h3>
-  </div>
-    <div class="w3-col l6 m6 w3-margin-bottom">
-    <select id="combo" onchange="show()">
-  <option >Select option</option>
-  <option value="contamination" id="contamination">Contamination</option>
-  <option value="ambientalalert" id="ambientalalert">Ambiental alert</option>
-  <option value="events" id="events">Events</option>
-  <option value="ecology" id="ecology">Ecology</option>
-  <option value="security" id="security">Security</option>
-</select>
-        </div>
-        <div class="w3-col l6 m6 w3-margin-bottom">
-            <select id="combo1" style="position:absolute;visibility: hidden;">
-  <option value="volvo">Trash</option>
-  <option value="saab">Muddy water</option>
-  <option value="opel">Noxious Fauna</option>
-  <option value="audi">Lord and Lady</option>
-</select>
-            <select id="combo2" style="position:absolute;visibility: hidden ;">
-  <option value="volvo">Closed beach</option>
-  <option value="saab">Fauna atack</option>
-  <option value="opel">Sea Atack</option>
-</select>
-            <select id="combo3" style="position:absolute;visibility: hidden ;">
-  <option value="volvo">Ecofriendly</option>
-  <option value="saab">Sports</option>
-  <option value="opel">Culture and Músic</option>
-  <option value="audi">Gastronomic Events</option>
-</select>
-            <select id="combo4" style="position:absolute;visibility: hidden ;">
-  <option value="volvo">Flora</option>
-  <option value="saab">Fauna</option>
-  <option value="opel">Water and Land</option>
-  <option value="audi">Land damage</option>
-</select>
-            <select id="combo5" style="position:absolute;visibility: hidden ;">
-  <option value="volvo">Furniture damage</option>
-  <option value="saab">theft</option>
-  <option value="opel">Accident</option>
-  <option value="audi">Illegal activity</option>
-</select>
-        </div>
     
-    
-    
-  </div>
-  <!-- Project Section -->
-  <div class="w3-container w3-padding-32" id="projects">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Common risks</h3>
-  </div>
 
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Broken glass</div>
-        <img src="images/glass.jpg" alt="broken glass" style="width:100%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Rock terrain</div>
-        <img src="images/rocks.jpg" alt="Rock terrain" style="width:100%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Trash</div>
-        <img src="images/trash.jpg" alt="Trash" style="width:100%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">High Dunes</div>
-        <img src="/images/dunes.jpg" alt="High dunes" style="width:100%">
-      </div>
-    </div>
-  </div>
+</script>
 
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Mosquito</div>
-        <img src="images/mosquito.jpg" alt="Mosquito" style="width:99%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Snake</div>
-        <img src="images/snake.jpg" alt="Sanke" style="width:99%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">JellyFish</div>
-        <img src="images/jellyfish.jpg" alt="Jelly fish" style="width:99%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Manta Ray</div>
-        <img src="images/manta%20ray.jpg" alt="House" style="width:99%">
-      </div>
-    </div>
-  </div> 
-
-  <!-- About Section -->
-  <div class="w3-container w3-padding-32" id="about">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About My Playa</h3>
-    <p>
-        My Playa is a beach-goers oriented application that provides environmental, safety and recreational information con local beaches.
-    </p>
-  </div>
-
-  <div class="w3-row-padding w3-grayscale">
-      <div class="w3-container w3-center">
-          "Aquí va el video"
-      </div>
-  </div>
-
-  <!-- Contact Section -->
-  
-  
-<!-- End page content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-        <div class="w3-container w3-padding-0" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
-       <div class="w3-col l3 m6 w3-margin-bottom">
-           Contact us
-           <p>email: myplaya@myplaya.mx</p>
-           <p>Phone: 6681762398</p>
-        </div>
-            <div class="w3-col l3 m6 w3-margin-bottom">
-               Social Media
-               <br>
-                <a href="#" class="fa fa-facebook"></a>
-<a href="#" class="fa fa-twitter"></a>
-<a href="#" class="fa fa-instagram"></a>
-        </div>
-            Where to find us
-            <div class="w3-col l6 m6 w3-margin-bottom">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.7481618442484!2d-108.98198518450658!3d25.811881183613984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ba28b72d7b489f%3A0x673d84b1ca02ca89!2sCowork+Corner!5e0!3m2!1ses-419!2smx!4v1493504078039" width="600" height="250" frameborder="0" margin-top="20px" allowfullscreen></iframe>
-        </div>
-  </div>
-</footer>
-
-</body>
-    <script>
-    var mymap = L.map('mapid').setView([25.578276, -109.117918], 15);
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-    maxZoom: 18
-    , attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="http://mapbox.com">Mapbox</a>'
-    , id: 'mapbox.streets'
-}).addTo(mymap);
-var circle = L.circle([25.580276, -109.119918], {
-    color: 'red'
-    , fillColor: '#f03'
-    , fillOpacity: 0.5
-    , radius: 100
-}).addTo(mymap);
-circle.bindPopup("Mayormente vidrios");
-    </script>
 </html>
