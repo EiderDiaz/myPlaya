@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="index.css">
+<script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
+    <a href="#home" class="w3-bar-item w3-button"><b>My</b> playa</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#projects" class="w3-bar-item w3-button">Common riks</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:2000px;" id="home">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.7481618442484!2d-108.98198518450658!3d25.811881183613984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ba28b72d7b489f%3A0x673d84b1ca02ca89!2sCowork+Corner!5e0!3m2!1ses-419!2smx!4v1493504078039" width="2000" height="650" frameborder="0" margin-top="20px" allowfullscreen></iframe>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+<div class="w3-container w3-padding-32" id="about">
+        <div class="w3-container w3-padding-0" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="text-allign:center">Update map</h3>
+  </div>
+    <div class="w3-col l2 m6 w3-margin-bottom">
+    <select id="combo" onchange="show()">
+  <option >Select option</option>
+  <option value="contamination" id="contamination">Contamination</option>
+  <option value="ambientalalert" id="ambientalalert">Ambiental alert</option>
+  <option value="events" id="events">Events</option>
+  <option value="ecology" id="ecology">Ecology</option>
+  <option value="security" id="security">Security</option>
+</select>
+        </div>
+        <div class="w3-col l2 m6 w3-margin-bottom">
+            <select id="combo1" style="position:absolute;visibility: hidden;">
+  <option value="volvo">Trash</option>
+  <option value="saab">Muddy water</option>
+  <option value="opel">Noxious Fauna</option>
+  <option value="audi">Lord and Lady</option>
+</select>
+            <select id="combo2" style="position:absolute;visibility: hidden ;">
+  <option value="volvo">Closed beach</option>
+  <option value="saab">Fauna atack</option>
+  <option value="opel">Sea Atack</option>
+</select>
+            <select id="combo3" style="position:absolute;visibility: hidden ;">
+  <option value="volvo">Ecofriendly</option>
+  <option value="saab">Sports</option>
+  <option value="opel">Culture and Músic</option>
+  <option value="audi">Gastronomic Events</option>
+</select>
+            <select id="combo4" style="position:absolute;visibility: hidden ;">
+  <option value="volvo">Flora</option>
+  <option value="saab">Fauna</option>
+  <option value="opel">Water and Land</option>
+  <option value="audi">Land damage</option>
+</select>
+            <select id="combo5" style="position:absolute;visibility: hidden ;">
+  <option value="volvo">Furniture damage</option>
+  <option value="saab">theft</option>
+  <option value="opel">Accident</option>
+  <option value="audi">Illegal activity</option>
+</select>
+        </div>
+    
+        <div class="w3-col l5 m6 w3-margin-bottom">
+         <textarea rows="4" cols="60">
+At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+</textarea>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <button type="button" value="send">Send</button>
+        </div>
+    
+    
+    
+  </div>
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Common risks</h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Broken glass</div>
+        <img src="images/glass.jpg" alt="broken glass" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Rock terrain</div>
+        <img src="images/rocks.jpg" alt="Rock terrain" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Trash</div>
+        <img src="images/trash.jpg" alt="Trash" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">High Dunes</div>
+        <img src="/images/dunes.jpg" alt="High dunes" style="width:100%">
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Mosquito</div>
+        <img src="images/mosquito.jpg" alt="Mosquito" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Snake</div>
+        <img src="images/snake.jpg" alt="Sanke" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">JellyFish</div>
+        <img src="images/jellyfish.jpg" alt="Jelly fish" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Manta Ray</div>
+        <img src="images/manta%20ray.jpg" alt="House" style="width:99%">
+      </div>
+    </div>
+  </div> 
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About My Playa</h3>
+    <p>
+        My Playa is a beach-goers oriented application that provides environmental, safety and recreational information con local beaches.
+    </p>
+  </div>
+
+  <div class="w3-row-padding w3-grayscale">
+      <div class="w3-container w3-center">
+          "Aquí va el video"
+      </div>
+  </div>
+
+  <!-- Contact Section -->
+  
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+        <div class="w3-container w3-padding-0" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+       <div class="w3-col l3 m6 w3-margin-bottom">
+           Contact us
+           <p>email: myplaya@myplaya.mx</p>
+           <p>Phone: 6681762398</p>
+        </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+               Social Media
+               <br>
+                <a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-instagram"></a>
+        </div>
+            Where to find us
+            <div class="w3-col l6 m6 w3-margin-bottom">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.7481618442484!2d-108.98198518450658!3d25.811881183613984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ba28b72d7b489f%3A0x673d84b1ca02ca89!2sCowork+Corner!5e0!3m2!1ses-419!2smx!4v1493504078039" width="600" height="250" frameborder="0" margin-top="20px" allowfullscreen></iframe>
+        </div>
+  </div>
+</footer>
+
+</body>
+</html>
