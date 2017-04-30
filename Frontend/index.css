@@ -22,8 +22,12 @@
   background: #125688;
   color: white;
 }
+#mapid{
+    width: 2000px;
+    height: 650px;
+}
 @media only screen and (max-width: 1024px){
-    #mapid { height: 1000px }
+    #mapid { height: 800px }
 }
 @media only screen and (max-width: 1024px){
     #mapid { height: 500px }
