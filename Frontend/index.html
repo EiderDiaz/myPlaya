@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="index.css">
+<script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -20,18 +23,69 @@
 </div>
 
 <!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <div class="map" width="1500" height="800">
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-    </div>
+<header class="w3-display-container w3-content w3-wide" style="max-width:2000px;" id="home">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.7481618442484!2d-108.98198518450658!3d25.811881183613984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ba28b72d7b489f%3A0x673d84b1ca02ca89!2sCowork+Corner!5e0!3m2!1ses-419!2smx!4v1493504078039" width="2000" height="650" frameborder="0" margin-top="20px" allowfullscreen></iframe>
 </header>
 
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
 <div class="w3-container w3-padding-32" id="about">
-    <p>
-        My Playa is a beach-goers oriented application that provides environmental, safety and recreational information con local beaches.
-    </p>
+        <div class="w3-container w3-padding-0" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="text-allign:center">Update map</h3>
+  </div>
+    <div class="w3-col l2 m6 w3-margin-bottom">
+    <select id="combo" onchange="show()">
+  <option >Select option</option>
+  <option value="contamination" id="contamination">Contamination</option>
+  <option value="ambientalalert" id="ambientalalert">Ambiental alert</option>
+  <option value="events" id="events">Events</option>
+  <option value="ecology" id="ecology">Ecology</option>
+  <option value="security" id="security">Security</option>
+</select>
+        </div>
+        <div class="w3-col l2 m6 w3-margin-bottom">
+            <select id="combo1" style="position:absolute;visibility: hidden;">
+  <option value="volvo">Trash</option>
+  <option value="saab">Muddy water</option>
+  <option value="opel">Noxious Fauna</option>
+  <option value="audi">Lord and Lady</option>
+</select>
+            <select id="combo2" style="position:absolute;visibility: hidden ;">
+  <option value="volvo">Closed beach</option>
+  <option value="saab">Fauna atack</option>
+  <option value="opel">Sea Atack</option>
+</select>
+            <select id="combo3" style="position:absolute;visibility: hidden ;">
+  <option value="volvo">Ecofriendly</option>
+  <option value="saab">Sports</option>
+  <option value="opel">Culture and Músic</option>
+  <option value="audi">Gastronomic Events</option>
+</select>
+            <select id="combo4" style="position:absolute;visibility: hidden ;">
+  <option value="volvo">Flora</option>
+  <option value="saab">Fauna</option>
+  <option value="opel">Water and Land</option>
+  <option value="audi">Land damage</option>
+</select>
+            <select id="combo5" style="position:absolute;visibility: hidden ;">
+  <option value="volvo">Furniture damage</option>
+  <option value="saab">theft</option>
+  <option value="opel">Accident</option>
+  <option value="audi">Illegal activity</option>
+</select>
+        </div>
+    
+        <div class="w3-col l5 m6 w3-margin-bottom">
+         <textarea rows="4" cols="60">
+At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+</textarea>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <button type="button" value="send">Send</button>
+        </div>
+    
+    
+    
   </div>
   <!-- Project Section -->
   <div class="w3-container w3-padding-32" id="projects">
@@ -42,25 +96,25 @@
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">Broken glass</div>
-        <img src="img/brokenglass.jpg" alt="House" style="width:100%">
+        <img src="images/glass.jpg" alt="broken glass" style="width:100%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">Rock terrain</div>
-        <img src="img/searocks.png" alt="House" style="width:100%">
+        <img src="images/rocks.jpg" alt="Rock terrain" style="width:100%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Sand pits</div>
-        <img src="/w3images/house3.jpg" alt="House" style="width:100%">
+        <div class="w3-display-topleft w3-black w3-padding">Trash</div>
+        <img src="images/trash.jpg" alt="Trash" style="width:100%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">High Dunes</div>
-        <img src="/img/seadunes.jpg" alt="House" style="width:100%">
+        <img src="/images/dunes.jpg" alt="High dunes" style="width:100%">
       </div>
     </div>
   </div>
@@ -69,25 +123,25 @@
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">Mosquito</div>
-        <img src="/w3images/house2.jpg" alt="House" style="width:99%">
+        <img src="images/mosquito.jpg" alt="Mosquito" style="width:99%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Serpents</div>
-        <img src="/w3images/house5.jpg" alt="House" style="width:99%">
+        <div class="w3-display-topleft w3-black w3-padding">Snake</div>
+        <img src="images/snake.jpg" alt="Sanke" style="width:99%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">JellyFish</div>
-        <img src="/w3images/house4.jpg" alt="House" style="width:99%">
+        <img src="images/jellyfish.jpg" alt="Jelly fish" style="width:99%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Sharks</div>
-        <img src="/w3images/house3.jpg" alt="House" style="width:99%">
+        <div class="w3-display-topleft w3-black w3-padding">Manta Ray</div>
+        <img src="images/manta%20ray.jpg" alt="House" style="width:99%">
       </div>
     </div>
   </div> 
@@ -101,24 +155,9 @@
   </div>
 
   <div class="w3-row-padding w3-grayscale">
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <img src="/w3images/team2.jpg" alt="John" style="width:100%; height">
-      <h3>Mision</h3>
-      <p class="w3-opacity">What we whant to achive</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    </div>
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
-      <h3>Vision</h3>
-      <p class="w3-opacity">What impact we whant to create</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    </div>
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
-      <h3>Our values</h3>
-      <p class="w3-opacity">What we do, in the right way</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    </div>
+      <div class="w3-container w3-center">
+          "Aquí va el video"
+      </div>
   </div>
 
   <!-- Contact Section -->
@@ -131,32 +170,24 @@
 <footer class="w3-center w3-black w3-padding-16">
         <div class="w3-container w3-padding-0" id="contact">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
-            
+       <div class="w3-col l3 m6 w3-margin-bottom">
+           Contact us
+           <p>email: myplaya@myplaya.mx</p>
+           <p>Phone: 6681762398</p>
+        </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+               Social Media
+               <br>
+                <a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-instagram"></a>
+        </div>
+            Where to find us
+            <div class="w3-col l6 m6 w3-margin-bottom">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.7481618442484!2d-108.98198518450658!3d25.811881183613984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ba28b72d7b489f%3A0x673d84b1ca02ca89!2sCowork+Corner!5e0!3m2!1ses-419!2smx!4v1493504078039" width="600" height="250" frameborder="0" margin-top="20px" allowfullscreen></iframe>
+        </div>
   </div>
 </footer>
-
-<!-- Add Google Maps -->
-<script>
-function myMap()
-{
-  myCenter=new google.maps.LatLng(41.878114, -87.629798);
-  var mapOptions= {
-    center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-  var marker = new google.maps.Marker({
-    position: myCenter,
-  });
-  marker.setMap(map);
-}
-</script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
 
 </body>
 </html>
