@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="index.css">
 <script type="text/javascript" src="index.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
@@ -16,7 +17,7 @@
         <div class="w3-right w3-hide-small"> <a href="#projects" class="w3-bar-item w3-button">Common riks</a> <a href="#about" class="w3-bar-item w3-button">About</a> <a href="#contact" class="w3-bar-item w3-button">Contact</a> </div>
     </div>
     <!-- Header -->
-    <header class="w3-display-container w3-content w3-wide" style="max-width:2000px;" id="home">
+<header class="w3-display-container w3-content w3-wide" style="max-width:2560px;" id="home">
         <div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative; outline: none;">
             <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
                 <div class="leaflet-pane leaflet-tile-pane">
@@ -60,7 +61,8 @@
                 <div class="leaflet-bottom leaflet-left"></div>
             </div>
         </div>
-    </header>
+    </div>
+        </header>
     <!-- Page content -->
     <div class="w3-content w3-padding" style="max-width:1564px">
     
@@ -109,7 +111,7 @@
             <p> My Playa is a beach-goers oriented application that provides environmental, safety and recreational information con local beaches. </p>
         </div>
         <div class="w3-row-padding w3-grayscale">
-            <div class="w3-container w3-center"> "Aquí va el video" </div>
+            <div class="w3-container w3-center"> <iframe id="video" src="https://www.youtube.com/embed/lwtTGHtmjLg" frameborder="0" allowfullscreen></iframe> </div>
         </div>
         <!-- Contact Section -->
         <!-- End page content -->
@@ -129,7 +131,7 @@
                 <a href="#" class="fa fa-instagram"></a>
             </div> Where to find us
             <div class="w3-col l6 m6 w3-margin-bottom">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.7481618442484!2d-108.98198518450658!3d25.811881183613984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ba28b72d7b489f%3A0x673d84b1ca02ca89!2sCowork+Corner!5e0!3m2!1ses-419!2smx!4v1493504078039" width="600" height="250" frameborder="0" margin-top="20px" allowfullscreen></iframe>
+                <iframe id="gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.7481618442484!2d-108.98198518450658!3d25.811881183613984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ba28b72d7b489f%3A0x673d84b1ca02ca89!2sCowork+Corner!5e0!3m2!1ses-419!2smx!4v1493504078039" width="600" height="250" frameborder="0" margin-top="20px" allowfullscreen></iframe>
             </div>
         </div>
     </footer>
