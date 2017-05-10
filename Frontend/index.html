@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="index.css">
 <script type="text/javascript" src="index.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
@@ -34,7 +34,7 @@
                 <div class="leaflet-top leaflet-left">
                     <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">-</a></div>
                 </div>
-                <div class="leaflet-top leaflet-right">
+                <div class="leaflet-bottom leaflet-left">
                     <div class="leaflet-control-layers leaflet-control" aria-haspopup="true">
                         <a class="leaflet-control-layers-toggle" href="#" title="Layers"></a>
                         <form class="leaflet-control-layers-list">
@@ -197,11 +197,15 @@
 
 	var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
 		streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr});
+    
+     
 
 	var map = L.map('map', {
 		center: [25.580276, -109.119918],
 		zoom: 15,
 		layers: [grayscale, cities]
+        
+        
 	});
 
 	var baseLayers = {
